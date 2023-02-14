@@ -71,6 +71,7 @@ class FakultasController extends Controller
     public function edit($nameStripe)
     {
         $fakultas = Fakultas::where('nama', str_replace('-', ' ', $nameStripe))->first();
+        return view('fakultas.edit', compact('fakultas'));
     }
 
     /**
@@ -80,9 +81,15 @@ class FakultasController extends Controller
      * @param  \App\Models\Fakultas  $fakultas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fakultas $fakultas)
+    public function update(Request $request, $nameStripe)
     {
-        //
+        $fakultas = Fakultas::where('nama', str_replace('-', ' ', $nameStripe))->first();
+        $validated = $request->validate([
+            'nama' => 'required'
+        ]);
+        $fakultas->nama = $validated['nama'];
+        $fakultas->save();
+        return redirect(route('fakultas.index'));
     }
 
     /**
