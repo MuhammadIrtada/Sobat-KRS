@@ -22,4 +22,9 @@ class Prodi extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function nameToStripe($name)
+    {
+        return str_replace(' ', '-', $name);
+    }
 }

@@ -28,6 +28,7 @@ class Navbar extends Component
         $navbar = [
             'Dashboard' => '/',
             'Fakultas' => '/fakultas',
+            'Program Studi' => '/prodi'
         ];
         
         return view('layouts.navbar', compact('navbar'));

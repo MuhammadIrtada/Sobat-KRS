@@ -6,18 +6,18 @@
                 <div class="container text-stat mb-3 border-bottom border-dark">
                     <div class="row mb-1">
                         <div class="col-3">
-                            <label class="col-form-label">Nama Fakultas</label>
+                            <label class="col-form-label">Fakultas</label>
                         </div>
                         <div class="col-1 align-self-center">
                             :
                         </div>
                         <div class="col-8">
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama">
+                            <input type="text" class="form-control @error('fakultas') is-invalid @enderror" name="fakultas">
                         </div>
                     </div>
                     <div class="row mb-3 text-danger">
                         <div class="col-md-8 offset-md-4 ps-3">
-                            @error('nama')
+                            @error('fakultas')
                                 {{ $message }}
                             @enderror
                         </div>

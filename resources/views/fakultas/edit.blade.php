@@ -7,7 +7,7 @@
                 <div class="container text-stat mb-3 border-bottom border-dark">
                     <div class="row mb-1">
                         <div class="col-3">
-                            <label class="col-form-label">Nama Fakultas</label>
+                            <label class="col-form-label">Fakultas</label>
                         </div>
                         <div class="col-1 align-self-center">
                             :

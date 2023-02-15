@@ -39,9 +39,9 @@ class FakultasController extends Controller
     {
         $fakultas = new Fakultas;
         $validated = $request->validate([
-            'nama' => 'required'
+            'fakultas' => 'required'
         ]);
-        $fakultas->nama = $validated['nama'];
+        $fakultas->nama = $validated['fakultas'];
         $fakultas->save();
         return redirect(route('fakultas.index'));
     }
