@@ -27,6 +27,7 @@ class Navbar extends Component
     {
         $navbar = [
             'Dashboard' => '/',
+            'User' => 'user',   
             'Fakultas' => '/fakultas',
             'Program Studi' => '/prodi'
         ];

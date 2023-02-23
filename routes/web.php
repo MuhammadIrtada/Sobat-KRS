@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +23,7 @@ Route::get('/', function () {
 
 Route::resource('fakultas', FakultasController::class);
 Route::resource('prodi', ProdiController::class);
+Route::resource('user', UserController::class)->middleware('auth');
+Route::get('login', [LoginController::class, 'create'])->name('login');
+Route::post('login', [LoginController::class, 'authenticate']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');

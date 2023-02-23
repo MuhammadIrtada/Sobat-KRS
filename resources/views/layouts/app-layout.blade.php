@@ -20,11 +20,23 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Nama
+                        @auth
+                        {{ Auth::user()->name }}     
+                        @else
+                        Login/Register                       
+                        @endauth
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
+                        @auth
                         <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <li><button class="dropdown-item">Logout</button></li>
+                        </form> 
+                        @else
+                        <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                        <li><a class="dropdown-item" href="#">Register</a></li>
+                        @endauth
                     </ul>
                 </div>
             </div>

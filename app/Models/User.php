@@ -53,8 +53,13 @@ class User extends Authenticatable
         return $this->belongsTo(Fakultas::class);
     }
 
-    public function prodis()
+    public function prodi()
     {
         return $this->belongsTo(Prodi::class);
+    }
+
+    public function nameToStripe($name)
+    {
+        return str_replace(' ', '-', $name);
     }
 }
